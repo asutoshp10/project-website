@@ -1,0 +1,11 @@
+flask
+flask_cors
+gunicorn
+numpy
+mediapipe
+opencv-python
+pytesseract
+pdfplumber
+pdf2image
+base64io
+google-generativeai
