@@ -57,10 +57,6 @@ def process_image():
     return jsonify({ "processed_image": encoded_img })
 
 
-
-if __name__ == '__main__':
-    app.run(debug=True)
-        
         
 
 
