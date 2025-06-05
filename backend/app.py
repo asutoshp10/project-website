@@ -10,10 +10,7 @@ from vol_crtl import give_posture
 upload_folder='uploads'
 os.makedirs(upload_folder,exist_ok=True)
 app=Flask(__name__)
-CORS(app, origins=[
-    "http://localhost:3000",
-    "https://project-website-frontend.netlify.app"
-])
+CORS(app, resources={r"/*": {"origins": "*"}})
 @app.route('/upload', methods=['GET','POST'])
 def upload():
     if request.method=='POST':
