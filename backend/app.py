@@ -23,17 +23,11 @@ def upload():
         r=Resume_scorer(path,job)
         text=r.extract_text_from_pdf()
         analysis = r.parse_analyse()
-        score=analysis[:3]
-        emails, phones = r.extract_contacts(text)
+        # score=analysis[:3]
+        # emails, phones = r.extract_contacts(text)
         os.remove(path)
 
-        return jsonify({
-            'extracted_text': text,
-            'emails': emails,
-            'phones': phones,
-            'analysis': analysis[2:],
-            'score':score
-        })
+        return analysis
     
 @app.route('/process', methods=['POST'])
 def process_image():
@@ -43,7 +37,7 @@ def process_image():
     nparr = np.frombuffer(img_bytes, np.uint8)
     img_np = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
     print(img_np.shape)
-    # 🧠 PROCESS THE FRAME HERE (e.g., draw box)
+    #  PROCESS THE FRAME HERE (e.g., draw box)
     # cv2.putText(img_np, "Processed", (50, 50),
     #             cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
     # cv2.rectangle(img_np, (60, 60), (260, 180), (255, 0, 0), 2)

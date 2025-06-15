@@ -8,4 +8,5 @@ pytesseract
 pdfplumber
 pdf2image
 base64io
-google-generativeai
+openai
+python-dotenv
